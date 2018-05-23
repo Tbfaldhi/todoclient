@@ -20,7 +20,7 @@ const app = new Vue({
        },
       update:function (task) {  
 
-          axios.put('http://localhost:3000/updatetask',{task} )
+          axios.put('https://whispering-shore-29272.herokuapp.com/updatetask',{task} )
           .then(res=>{
             swal({
               title: "status change",
@@ -38,7 +38,7 @@ const app = new Vue({
       },
       deleted: function (data) {  
 
-        axios.delete(`http://localhost:3000/deletetask/${data}`)
+        axios.delete(`https://whispering-shore-29272.herokuapp.com/deletetask/${data}`)
         .then(data=>{
           swal({
             title: "Success deleted",
@@ -58,7 +58,7 @@ const app = new Vue({
 
         token = localStorage.getItem('token')
         let self = this   
-        axios.get("http://localhost:3000/getlist",{headers: {token: token}})
+        axios.get("https://whispering-shore-29272.herokuapp.com/getlist",{headers: {token: token}})
         .then(function (data) {
           self.tasklist = data.data
         })
@@ -68,7 +68,7 @@ const app = new Vue({
       },
       addtask(){
         token = localStorage.getItem('token')    
-        axios.post('http://localhost:3000/addTask',{task:this.taskdata.task},{headers: {token: token}})
+        axios.post('https://whispering-shore-29272.herokuapp.com/addTask',{task:this.taskdata.task},{headers: {token: token}})
         .then(data=>{
           swal({
             title: "Success add",   

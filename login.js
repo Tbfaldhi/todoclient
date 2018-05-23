@@ -20,7 +20,7 @@ const app = new Vue({
         register: function (event) {
         
             event.preventDefault();
-            axios.post('http://localhost:3000/users/register', this.registerData)
+            axios.post('https://whispering-shore-29272.herokuapp.com/users/register', this.registerData)
             .then((response) => {
                 this.registerData.username= '';
                 this.registerData.email= '';
@@ -34,7 +34,7 @@ const app = new Vue({
           login: function (event) {
     
             event.preventDefault()
-            axios.post('http://localhost:3000/users/login', this.loginData)
+            axios.post('https://whispering-shore-29272.herokuapp.com/users/login', this.loginData)
             .then(response => {
                 
               localStorage.setItem('token', response.data.token)
